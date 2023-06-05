@@ -4,16 +4,16 @@ import logging
 from datetime import datetime
 
 
-KEYS = ['f15', 'f16', 'f17', 'f18', 'f19']
+KEYS = ['f15', 'f17', 'f18', 'f19']
 pag.FAILSAFE = False
-logging.basicConfig(filename='screenlog.log', level=logging.INFO, format='%(asctime)s %(levelname)s: %(message)s')
+logging.basicConfig(filename='log.log', level=logging.INFO, format='%(asctime)s %(levelname)s: %(message)s')
 
 def get_random(func):
     def wrapper():
         min_move = randint(-30, 30)
         max_move = randint(-30, 30)
         key = choice(KEYS)
-        pause_time = randint(40, 120)
+        pause_time = randint(100, 150)
         try:
             result = func(min_move, max_move, pause_time)
         except:
